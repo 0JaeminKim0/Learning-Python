@@ -86,3 +86,9 @@ copy_of_x = x[:]
 x.extend([99, 999, 9999])
 print x, len(x)
 
+### The difference between list & tuple
+
+# The most important word is immutable !
+# The list can be changed by given user's value
+# But the tuple can not be changed ! The error "TypeError" occured.
+
