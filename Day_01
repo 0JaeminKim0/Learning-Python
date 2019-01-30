@@ -1,0 +1,35 @@
+## 30 - 01 - 2019 ##
+
+##      DAY 1     ##
+
+
+## How to make function in python.
+
+def double(x):
+    return x * 2
+
+def apply_to_one(f):
+    return f(1)
+
+def my_print(message="My default message"):
+    print message
+    
+def substract(a, b):
+    print a - b
+
+# Declare the function
+my_double = double
+
+x = apply_to_one(my_double)
+
+# As using lamda, I can assign variable x 
+# and get a return value as well.
+y = apply_to_one(lambda x: x + 4)
+
+print x, y
+#my_print()
+#my_print("Hello")
+#substract(5, 10)
+
+#As using lamda, let me make a substraction instead of function
+print (lambda a,b: a - b)(10, 20)
