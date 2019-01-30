@@ -48,3 +48,41 @@ try:
     print 0/0
 except ZeroDivisionError:
     print "cannot divide by zero"
+    
+### Make a variable cases of list
+
+## Play with lists
+integer_list = [1,2,3]
+heterogeneous_list = ["string", 0.1, True]
+list_of_list = [integer_list, heterogeneous_list, [], 234]
+
+#print list_of_list
+
+## Get & Set nth element of a list
+x = range(10)
+zero = x[0]
+# When the element is negative, it indicates from end
+nine = x[-1]
+eight = x[-2]
+# can set a part in a list through initialising the value
+x[0] = -22
+#print x
+
+## slice the list
+first_three = x[:3]
+#print first_three
+three_to_end = x[3:]
+#print three_to_end
+one_to_four = x[1:5]
+#print one_to_four
+last_three = x[-3:]
+#print last_three
+without_one_and_last = x[1:-1]
+#print without_one_and_last
+copy_of_x = x[:]
+#print copy_of_x
+
+## Extending the list
+x.extend([99, 999, 9999])
+print x, len(x)
+
