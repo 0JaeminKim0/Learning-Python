@@ -33,3 +33,18 @@ print x, y
 
 #As using lamda, let me make a substraction instead of function
 print (lambda a,b: a - b)(10, 20)
+
+##Show how to quote the string
+
+single_quoted_string = 'data science'
+double_quoted_string = "data science"
+
+tab_string = "\t"
+#print len(tab_string)
+
+## Exception ( try and except )
+# The case for zerodivisionerror
+try:
+    print 0/0
+except ZeroDivisionError:
+    print "cannot divide by zero"
