@@ -1,0 +1,36 @@
+from collections import defaultdict
+
+#word_counts = defaultdict(int)
+#for word in document:
+#    word_counts[word] += 1
+    
+dd_list = defaultdict(list)
+dd_list[2].append(1)
+
+#print dd_list
+
+## Getting number of number from 1 to 109
+d = defaultdict(int)
+for n in range(1, 109):
+    for x in str(n):
+        d[x] += 1
+
+#print d
+
+## dict() producing
+dd_dict = defaultdict(dict)
+dd_dict["jay"]["city"] = "Seoul"
+
+#print dd_dict # Jay's value : {city : Seoul}
+              # and city's value : Seoul
+    
+## lambda producing
+dd_lamb = defaultdict(lambda: [0,0,0]) ## lambda list.
+dd_lamb[3][1] = 34
+
+#print dd_lamb
+
+
+
+## DefaultDict is useful when we aim to get the result of dictionary
+## by some key and don't want to have to check every time to see if the key exists yet.
