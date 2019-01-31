@@ -1,0 +1,64 @@
+###Dictionary : One of fundamental data structure, which 
+### 	      associates values with keys ( String Type)
+###			  It does not support Boxing & Unboxing
+###			  Also, It is generic
+
+empty_dict = {}
+empty_dict2 = dict()
+grades = {"Jay" : 100, "Tim" : 99}
+
+jays_grade = grades["Jay"]
+
+#print jays_grade
+
+## Showing exception case : Key Error
+try:
+    kate_grade = grades["kate"]
+except KeyError:
+    print "None information"
+
+## Check for the existence of a key using in
+jay_has_grade = "Jay" in grades  # return true
+kate_has_grade = "kate" in grades# return false
+
+#print jay_has_grade 
+#print kate_has_grade
+
+#get method from dictionary -> it return a default value
+jay_grade = grades.get("Jay", 0)
+kate_grade = grades.get("kate", 0)
+no_ones_grade = grades.get("No one") #default value : none
+
+#print jay_grade
+#print kate_grade
+#print no_ones_grade
+
+## Replace old value
+grades["Tim"] = 43
+grades["Jay"] = 12
+num_students = len(grades)
+
+#print grades
+#print num_students
+
+
+tweet = {
+    "user" : "jay kim",
+    "text" : "Data science learner",
+    "retweet_count" : 1000,
+    "hashtags" : ["#data", "#science", "#high"]
+}
+
+tweet_keys = tweet.keys()
+tweet_values = tweet.values()
+tweet_items = tweet.items()
+
+#print tweet_keys, tweet_values, tweet_items
+
+
+print "user" in tweet_keys
+print "user" in tweet
+print "jay kim" in tweet_values
+
+### List can not be keys
+### If user need a multiple key, we should use tuple
