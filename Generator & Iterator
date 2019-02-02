@@ -1,0 +1,50 @@
+### Generator and Iterator
+## This section is useful the case for memory mananging.
+## For example, range(1000000) creates an actual list of 
+## 1 million elements. 
+
+## Generator is something that you can iterate over but
+## whose values are produced only as needed
+
+##############Function and yield operator###############
+
+def spec_range(n):
+    """a lazy version of range"""
+    i = 0
+    while i < n:
+        yield i
+        i += 1
+        
+#### What is the yield ###
+## Yield can easy to escpae from to loop during the execution
+def gen():
+    yield 'one'
+    yield 'two'
+    yield 'three'
+
+g = gen()
+print(next(g))
+print(next(g))
+print(next(g))
+
+## The case for put into yiled position ##
+def gen2():
+    val = 111
+    while True:
+        val = (yield val) * 111
+g2 = gen2()        
+print(next(g2))        
+print(g2.send(2))
+print(g2.send(0))
+
+
+def natural_numbers():
+    """returns 1, 2, 3, .... """
+    n = 1
+    while True:
+        yield n
+        n += 1
+
+## In python, range() creates a list form
+## ex range(10) = {1, 2, ,3, ...9}
+## It is similar as for each in usual programming language
