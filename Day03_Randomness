@@ -1,0 +1,36 @@
+### Randomness
+# Genenrate radom number
+
+import random
+
+fouruniformrandom = [random.random() for _ in range(4)]
+#print(fouruniformrandom)
+
+## Initial seed into random number
+## Seed : to fix the random number
+random.seed(10)
+print(random.random())
+random.seed(10)
+print(random.random())
+random.seed(99)
+print(random.random())
+
+## Random number in range
+up_to_ten = list(range(10))
+random.shuffle(up_to_ten)
+print(up_to_ten)
+# Example
+my_best_friend = random.choice(["Alice",
+                                "Bob",
+                                "Jay"])
+print(my_best_friend)
+
+## Sampling
+lottery_no = list(range(60))
+winning_no = random.sample(lottery_no, 6)
+print(winning_no)
+
+## Replacement(make a multiple calls to random.choice)
+four_with_replacement = [random.choice(list(range(10)))
+                         for _ in range(4)]
+print(four_with_replacement)
