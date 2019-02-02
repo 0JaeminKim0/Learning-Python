@@ -1,0 +1,28 @@
+### List Comprehension
+# For transforming a list into another list
+# By choosing only certain elements
+# or both
+
+# even number list
+even_no = [x for x in range(5) if x % 2 is 0]
+squares = [x * x for x in range(5)]
+even_squares = [x * x for x in even_no]
+
+#print even_no, squares, even_squares
+
+zeroes = [0 for _ in even_no]
+print zeroes
+
+# multiple for in a list comprehension
+
+pairs = [(x,y)
+         for x in range(3)
+         for y in range(3)]
+print pairs
+
+# later for can use the results of earlier ones:
+# the case for x < y
+increasing_pairs = [(x,y)
+                    for x in range(4)
+                    for y in range(x+1, 4)]
+print increasing_pairs
