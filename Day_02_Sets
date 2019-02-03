@@ -34,3 +34,8 @@ print distinct_tuple
 ### When I use the set from list or tuple
 ### the result only show up existence word without duplicated
 ### writing.
+
+
+#### Set has several properties : Unordered, and unrepeatable
+#### So, when we want to pop the value in the set
+#### we need to change to list or tuple.
