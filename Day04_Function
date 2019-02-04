@@ -1,0 +1,99 @@
+### Function tool
+
+# Example
+
+def exp(base, power):
+    return base ** power
+
+a = exp(2, 4)
+print(a)
+
+def is_even(x):
+    return x % 2 == 0
+
+## Filter Function ##
+xs = [1, 2, 3, 4]
+x_evens = [x for x in xs if is_even(x)]
+print(x_evens)
+x_evens = filter(is_even, xs)
+print(x_evens)
+
+# When user does not know how many arguments 
+# will be used for the function
+
+# def func_name(*parameter):
+    #<>
+
+#ex
+def add_many(*args):
+    result = 0
+    for i in args:
+        result += i
+    return result
+
+result = add_many(1, 2, 3 , 4, 5)
+print(result)
+
+# ex2 
+def add_mul(opt, *args):
+    if opt is "add":
+        result = 0
+        for x in args:
+            result += x
+    if opt is "mul":
+        result = 1
+        for x in args:
+            result *= x
+    return result
+
+a_result = add_mul("add", 1, 2, 3, 4, 5)
+m_result = add_mul("mul", 1, 2, 3, 4, 5)
+print(a_result, m_result)
+
+##### Parameter kwargs
+# The case when we want to make a higher-order
+# function that takes as input some function f
+# and return a new function that for any input
+# return twice the value f:
+def doubler(f):
+    def g(x):
+        return 2 * f(x)
+    return g
+
+def f1(x):
+    return x + 1
+
+g = doubler(f1)
+print(g(3))
+print(g(-1))
+
+# Instead of this case
+def magic(*args, **kwargs):
+    print("unamed args:", args)
+    print("unamed kwargs:", kwargs)
+
+magic(1, 2, key="word", value="word2")
+##############################
+
+# kwargs printed as dictionary form
+def print_kwargs(**kwargs):
+    print(kwargs)
+
+print(print_kwargs(a=1, b=3, c=4, d=5, f=2))
+
+# Interesting points:
+# unnamed args are tuple form
+# unnamed kwargs are dict form
+# we can supply one function which works in a one time
+
+def tu_di_add(x, y, z):
+    return x + y + z
+
+list = [1, 2]
+dict = {"z" : 3}
+
+print(tu_di_add(*list, **dict))
+
+################
+
+
