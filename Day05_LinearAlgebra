@@ -36,3 +36,25 @@ def vector_sum2(vector):
     return reduce(vector_add, vector)
 print(vector_sum2(vector1))
 # To make a result from list about computation.
+
+### Multiply vector by scalar
+
+def mul_v_s(scalar, vector):
+    return [scalar * v for v in vector]
+
+print(mul_v_s(3, [1, 2, 3]))
+
+### Getting a mean as using mul_v_s
+def vector_add(v, w):
+    return [v_i + w_i for v_i, w_i in zip(v, w)]
+
+def vector_sum(vector):
+    return reduce(vector_add, vector)
+
+def mean(vector):
+    n = len(vector)
+    return mul_v_s(1.0 / float(n), vector_sum(vector))
+
+vector1 = [[1, 10], [3, 4]]
+
+print((mean(vector1)))
