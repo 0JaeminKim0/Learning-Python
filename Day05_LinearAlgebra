@@ -1,0 +1,38 @@
+### Linear Algebra
+# It is the branch of mathematics that deals with
+# vector spacces
+
+## Vector
+# Vectors are objects that can be added together and that
+# can be multiplied by scalars, also to form new vectors
+
+# * List is not vector in python
+
+###### zip-ing the vectors together and using a list 
+###### comprehension to add the corresponding elements
+def vector_add(v, w):
+    return [v_i + w_i
+            for v_i, w_i in zip(v, w)]
+
+print(zip([1,2], [3,4]))
+print(vector_add([1,2], [3,4]))
+
+def vector_sub(v, w):
+    return [v_i - w_i
+            for v_i, w_i in zip(v, w)]
+print(vector_sub([1,2], [3,4]))
+
+def vector_sum(vector):
+    result = vector[0]
+    for v in vector[1:]:
+        result = vector_add(result, v)
+    return result
+
+vector1 = [[1, 2], [2, 3], [4,5]]
+print(vector_sum(vector1))
+
+### What is the reduce function??? ###
+def vector_sum2(vector):
+    return reduce(vector_add, vector)
+print(vector_sum2(vector1))
+# To make a result from list about computation.
