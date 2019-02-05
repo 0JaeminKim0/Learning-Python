@@ -58,3 +58,10 @@ def mean(vector):
 vector1 = [[1, 10], [3, 4]]
 
 print((mean(vector1)))
+
+# Dot product
+
+def dot(v, w):
+    return sum(v_i * w_i for v_i, w_i in zip(v, w))
+
+print(dot([1,2], [3,4]))
