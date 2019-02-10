@@ -1,0 +1,73 @@
+###Statistic
+
+# Describing a single set of data
+
+## Mean is the average in data set
+
+## Median is the Midpoint where the data set is
+# 1. Sorting as ascending order
+# 2. Find the mid point
+# Even case: Value of mid + mid-1 and divide by 2
+# Odd case : Value of mid point
+
+## Mode is the value which frequently occur
+
+## Dispersion
+#  It refers to measure of how spread out our data
+#  Which values near zero signify not spread out at
+#  all and for which large values signify very
+#  spread out
+
+def data_range(x):
+    return max(x) - min(x)
+
+# If max(x) and min(x) are equal zero, which can happen
+# if the elements of x are all the same.(Unspread)
+
+# Median : the range doesn't really depend on the
+# whole data set.
+
+# More complex measure of dispersion is the variance
+
+# Translate x by subtracting its mean
+def de_mean(x):
+    x_bar = mean(x)
+    return [x_i - x_bar for x_i in x]
+
+def sum_of_squares(v):
+	return sum(v_i ** 2 for v_i in v)
+
+def variance(x):
+    n = len(x)
+    deviations = de_mean(x)
+    return sum_of_squares(deviations) / (n-1)
+
+# the standard deviation is a measure that is
+# used to quantify the amount of variation or
+# dispersion of a set of data values.
+def standard_deviation(x):
+    return math.sqrt(variance(x))
+
+
+
+#### Correlation
+
+# It show up the relationship between two data which made as matrix
+## Covariance : the paried analogue of variance
+# In other words, it show up how prbability values are spread out.
+# The variable spread out at 1, 3 axis : Positive Relationship
+# The variable spread out at 2, 4 axis : Negative Relationship
+# The variable spread out at every axis : No Relationship
+
+# Formula : Dot( standard_deviation of x data and y data ) and divide by number of data x
+#           * Dot : mulitply of two matrix
+
+## Correlation : The correlation is unitless and always lies between -1 (perfect anti-correlation) and 1
+# (perfect correlation)
+# Why we need a correlation
+# 1. Its units are the product of input's units, which can be hard to make sense of.
+# 2. If each user had twice as many frds, the covariance would be twice as large
+#    but, in a sense the variable would be just as interrelated.
+
+# Formula : Covariance(x, y) / standard_deviation x * standard_deviation y
+
