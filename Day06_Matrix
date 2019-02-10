@@ -1,0 +1,62 @@
+A = [[1, 2, 3],
+     [4, 5, 6]]
+
+B = [[1, 2],
+     [3, 4],
+     [5, 6]]
+
+print(A, B)
+
+#The matrix A has len(A) rows, and len(A[0]) Column
+
+def shape(A):
+    num_row = len(A)
+    num_col = len(A[0]) if A else 0
+    print 'row :', num_row, 'column :', num_col
+    return num_row, num_col
+
+print(shape(A))
+
+def get_row(A, i):
+    return A[i]
+
+def get_col(A, j):
+    return [A_i[j]
+            for A_i in A]
+
+print(get_row(A, 1)) #4, 5, 6
+print(get_col(A, 1)) #2, 5
+
+### Make a own matrix function
+def make_matrix(num_row, num_col, entry_fn):
+    return[[entry_fn(i, j)
+            for j in range(num_col)]
+           for i in range(num_row)]
+
+def is_diagonal(i, j):
+    return 1 if i == j else 0
+
+def one_in_row(i, j):
+    return 1 if i == 0 else 0
+
+identify_matrix = make_matrix(5, 5, is_diagonal)
+print(identify_matrix)
+
+
+
+####Why matrix is important in data science??####
+# 1. To represent a data set consisting of multiple vectors
+#	Simply by considering each vector as row
+# ex.
+data = [[70, 170, 40],
+        [65, 120, 26],
+        [77, 250, 19],
+        #....
+        ]
+# 2. possible to use n x k matrix to represent a linear
+#    function that maps k-dimensional vectors to 
+#    n-dimensional vecors
+
+# 3. Matrix can be used to represent binary relationship.
+# 	 Such as an edges of a network as a collection of pair
+#	 (i, j). If connected, A[i][j] = 1, if not 0
