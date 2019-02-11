@@ -34,3 +34,33 @@ for _ in range(100):
 # P(E|F) = P(E, F) / P(F) = P(F|E)P(E)/P(F)
 # P(F) = P(F, E) + P(F, ㄱE)
 # P(E|F) = P(F|E)P(E)/[P(F, E) + P(F, ㄱE)]
+
+
+###Continuous Distributions
+# coin flip correspondings to a discrete distribution
+# that one associates postive probability with discrete
+# outcome.
+
+# Uniform distribution puts equal weight on all the numnber
+# 0 and 1. Because there are infinite numbers exist between
+# 0 AND 1.
+
+# So, as using continuous probability with probability density
+# function(pdf) such that probability of seeing a value
+# in certain interval equals the integral of the density
+# function over the interval.
+
+def uniform_pdf(x):
+    return 1 if x >= 0 and x < 1 else 0
+
+# Python's random.random() is a pseudo random variable
+# with a uniform density.
+
+# Cumulative distribution function (CDF), which gives the 
+# probablity that a random variable is less than or equal
+# to a certain value.
+
+def uniform_cdf(x):
+    if x < 0: return 0
+    if x < 1: return x
+    else:	  return 1
