@@ -25,3 +25,12 @@ for _ in range(100):
     print("P(both | either): ", both_girl // either_girl)
 
 #print(random_kid())
+
+
+## Bayes Theorem
+# There is the probability of some event E conditional on some other event F
+# occuring that we need to know. But we only have information about the probability
+# of F conditional on E occuring.
+# P(E|F) = P(E, F) / P(F) = P(F|E)P(E)/P(F)
+# P(F) = P(F, E) + P(F, ㄱE)
+# P(E|F) = P(F|E)P(E)/[P(F, E) + P(F, ㄱE)]
